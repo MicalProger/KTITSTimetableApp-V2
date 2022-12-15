@@ -5,34 +5,34 @@
     {
       "TeacherName": "Садыкова Надежда Александровна",
       "LessonName": "Математика",
-      "ClassNo": 310
+      "ClassNo": "310"
     },
     {
       "TeacherName": "Волчкова Екатерина Сергеевна(202)-Моисеева Арина Александровна(411)|Шарипова Эльвира Камиловна(202)",
       "LessonName": "Английский|Литература",
-      "ClassNo": 202
+      "ClassNo": "202, 411"
     }
   ],
   [
     {
       "TeacherName": "Волчкова Екатерина Сергеевна(406)-Моисеева Арина Александровна(411)",
       "LessonName": "Английский",
-      "ClassNo": 202
+      "ClassNo": "406, 411"
     },
     {
       "TeacherName": "Шкиндерова Инна Николаевна",
-      "LessonName": "Литература",
-      "ClassNo": 202
+      "LessonName": "Химия",
+      "ClassNo": "425"
     },
     {
       "TeacherName": "Шарипова Эльвира Камиловна",
       "LessonName": "Русский язык",
-      "ClassNo": 202
+      "ClassNo": "202"
     },
     {
       "TeacherName": "Садыкова Надежда Александровна",
       "LessonName": "Геометрия",
-      "ClassNo": 310
+      "ClassNo": "спортзал, 310"
     }
   ],
   [
@@ -41,56 +41,56 @@
     {
       "TeacherName": "Хуснутдинова Люция Галиаскаровна",
       "LessonName": "ОБЖ",
-      "ClassNo": 208
+      "ClassNo": "205"
     },
     {
       "TeacherName": "Садыкова Надежда Александровна",
       "LessonName": "Математика",
-      "ClassNo": 310
+      "ClassNo": "310"
     },
     {
       "TeacherName": "Васильев Евгений Пертович",
       "LessonName": "История",
-      "ClassNo": 202
+      "ClassNo": "414"
     }
   ],
   [
     {
       "TeacherName": "Бурдин Сергей Алексеевич",
       "LessonName": "Физика",
-      "ClassNo": 321
+      "ClassNo": "321"
     },
     {
       "TeacherName": "Ляпнина Надежда Александровна",
       "LessonName": "Информатика",
-      "ClassNo": 315
+      "ClassNo": "315"
     },
     {
       "TeacherName": "ХЗ",
       "LessonName": "Физра",
-      "ClassNo": 1100
+      "ClassNo": "спортзал"
     }
   ],
   [
     {
       "TeacherName": "Садыкова Надежда Александровна",
       "LessonName": "Математика",
-      "ClassNo": 310
+      "ClassNo": "310"
     },
     {
       "TeacherName": "Ляпнина Надежда Александровна",
       "LessonName": "Информатика",
-      "ClassNo": 315
+      "ClassNo": "315"
     },
     {
-      "TeacherName": "Шириева Гульчачак Маратовна-Хуснулина(313)-Хуснуллина Зилина Магфуровна(322)",
+      "TeacherName": "Шириева Гульчачак Маратовна-Хуснуллина Зилина Магфуровна",
       "LessonName": "Татарский язык",
-      "ClassNo": 313
+      "ClassNo": "312,322"
     },
     {
       "TeacherName": "Бурдин Сергей Алексеевич",
       "LessonName": "Физика",
-      "ClassNo": 321
+      "ClassNo": "321"
     }
   ],
   [
@@ -99,12 +99,12 @@
     {
       "TeacherName": "Шарипова Эльвира Камиловна",
       "LessonName": "Литература",
-      "ClassNo": 202
+      "ClassNo": "202"
     },
     {
       "TeacherName": "Васильев Евгений Пертович",
       "LessonName": "История",
-      "ClassNo": 202
+      "ClassNo": "315"
     }
   ]
 ]

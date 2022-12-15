@@ -5,8 +5,6 @@ namespace KTITSTimetableApp;
 
 public partial class MainPage : ContentPage
 {
-    System.Timers.Timer Timer;
-    int count = 0;
     public async Task<string> ReadTextFile(string filePath)
     {
         using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync(filePath);
@@ -25,7 +23,8 @@ public partial class MainPage : ContentPage
         Utils.CallsSat = JsonSerializer.Deserialize<List<TimeSpan>>(text);
         text = ReadTextFile("122.json").Result;
         Utils.TT = JsonSerializer.Deserialize<List<Lesson[]>>(text);
-        if ((int)DateTime.Now.DayOfWeek == 6)
+        int nowWP = (int)DateTime.Now.DayOfWeek;
+        if (nowWP == 7)
             return;
         Utils.UpdateTT();
         LoadTT();
@@ -109,7 +108,7 @@ public partial class MainPage : ContentPage
                     };
                     Label lbN = new Label()
                     {
-                        Text = lesson.ClassNo.ToString(),
+                        Text = lesson.ClassNo,
                         Margin = new Thickness(17, 0),
                         FontSize = 25
                     };

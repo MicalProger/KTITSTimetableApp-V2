@@ -10,6 +10,6 @@ namespace KTITSTimetableApp
     {
         public string TeacherName { get; set; }
         public string LessonName { get; set; }
-        public int ClassNo { get; set; }
+        public string ClassNo { get; set; }
     }
 }

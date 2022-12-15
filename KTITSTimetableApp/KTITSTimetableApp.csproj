@@ -24,7 +24,7 @@
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">28.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
@@ -53,6 +53,10 @@
 	  <None Remove="Resources\Raw\lessonCallMain.json" />
 	  <None Remove="Resources\Raw\lessonCallSat.json" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Plugin.Firebase" Version="1.2.4" />
+	</ItemGroup>
 	<PropertyGroup Condition="$(TargetFramework.Contains('-android')) and '$(Configuration)' == 'Release'">
 		<AndroidKeyStore>True</AndroidKeyStore>
 		<AndroidSigningKeyStore>..\myapp.keystore</AndroidSigningKeyStore>
@@ -61,52 +65,60 @@
 		<AndroidSigningStorePass>ktitsbest</AndroidSigningStorePass>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-android|AnyCPU'">
-	  <ApplicationTitle>Звонки в КТИТС</ApplicationTitle>
+	  <ApplicationTitle>DevCalls</ApplicationTitle>
 	  <ApplicationId>com.MiMM.ktitstimetableapp</ApplicationId>
-	  <ApplicationDisplayVersion>2.0</ApplicationDisplayVersion>
-	  <ApplicationVersion>6</ApplicationVersion>
+	  <ApplicationDisplayVersion>2.0.1</ApplicationDisplayVersion>
+	  <ApplicationVersion>7</ApplicationVersion>
+	  <ApplicationIdGuid>2e60024c-798b-4a98-ae19-69a39d78ca1a</ApplicationIdGuid>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-android|AnyCPU'">
-	  <ApplicationTitle>Звонки в КТИТС</ApplicationTitle>
+	  <ApplicationTitle>DevCalls</ApplicationTitle>
 	  <ApplicationId>com.MiMM.ktitstimetableapp</ApplicationId>
-	  <ApplicationDisplayVersion>2.0</ApplicationDisplayVersion>
-	  <ApplicationVersion>6</ApplicationVersion>
+	  <ApplicationDisplayVersion>2.0.1</ApplicationDisplayVersion>
+	  <ApplicationVersion>7</ApplicationVersion>
 	  <AndroidPackageFormat>apk</AndroidPackageFormat>
+	  <ApplicationIdGuid>2e60024c-798b-4a98-ae19-69a39d78ca1a</ApplicationIdGuid>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-ios|AnyCPU'">
-	  <ApplicationTitle>Звонки в КТИТС</ApplicationTitle>
+	  <ApplicationTitle>DevCalls</ApplicationTitle>
 	  <ApplicationId>com.MiMM.ktitstimetableapp</ApplicationId>
-	  <ApplicationDisplayVersion>2.0</ApplicationDisplayVersion>
-	  <ApplicationVersion>6</ApplicationVersion>
+	  <ApplicationDisplayVersion>2.0.1</ApplicationDisplayVersion>
+	  <ApplicationVersion>7</ApplicationVersion>
+	  <ApplicationIdGuid>2e60024c-798b-4a98-ae19-69a39d78ca1a</ApplicationIdGuid>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-ios|AnyCPU'">
-	  <ApplicationTitle>Звонки в КТИТС</ApplicationTitle>
+	  <ApplicationTitle>DevCalls</ApplicationTitle>
 	  <ApplicationId>com.MiMM.ktitstimetableapp</ApplicationId>
-	  <ApplicationDisplayVersion>2.0</ApplicationDisplayVersion>
-	  <ApplicationVersion>6</ApplicationVersion>
+	  <ApplicationDisplayVersion>2.0.1</ApplicationDisplayVersion>
+	  <ApplicationVersion>7</ApplicationVersion>
+	  <ApplicationIdGuid>2e60024c-798b-4a98-ae19-69a39d78ca1a</ApplicationIdGuid>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-maccatalyst|AnyCPU'">
-	  <ApplicationTitle>Звонки в КТИТС</ApplicationTitle>
+	  <ApplicationTitle>DevCalls</ApplicationTitle>
 	  <ApplicationId>com.MiMM.ktitstimetableapp</ApplicationId>
-	  <ApplicationDisplayVersion>2.0</ApplicationDisplayVersion>
-	  <ApplicationVersion>6</ApplicationVersion>
+	  <ApplicationDisplayVersion>2.0.1</ApplicationDisplayVersion>
+	  <ApplicationVersion>7</ApplicationVersion>
+	  <ApplicationIdGuid>2e60024c-798b-4a98-ae19-69a39d78ca1a</ApplicationIdGuid>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-maccatalyst|AnyCPU'">
-	  <ApplicationTitle>Звонки в КТИТС</ApplicationTitle>
+	  <ApplicationTitle>DevCalls</ApplicationTitle>
 	  <ApplicationId>com.MiMM.ktitstimetableapp</ApplicationId>
-	  <ApplicationDisplayVersion>2.0</ApplicationDisplayVersion>
-	  <ApplicationVersion>6</ApplicationVersion>
+	  <ApplicationDisplayVersion>2.0.1</ApplicationDisplayVersion>
+	  <ApplicationVersion>7</ApplicationVersion>
+	  <ApplicationIdGuid>2e60024c-798b-4a98-ae19-69a39d78ca1a</ApplicationIdGuid>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows10.0.19041.0|AnyCPU'">
-	  <ApplicationTitle>Звонки в КТИТС</ApplicationTitle>
+	  <ApplicationTitle>DevCalls</ApplicationTitle>
 	  <ApplicationId>com.MiMM.ktitstimetableapp</ApplicationId>
-	  <ApplicationDisplayVersion>2.0</ApplicationDisplayVersion>
-	  <ApplicationVersion>6</ApplicationVersion>
+	  <ApplicationDisplayVersion>2.0.1</ApplicationDisplayVersion>
+	  <ApplicationVersion>7</ApplicationVersion>
+	  <ApplicationIdGuid>2e60024c-798b-4a98-ae19-69a39d78ca1a</ApplicationIdGuid>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-windows10.0.19041.0|AnyCPU'">
-	  <ApplicationTitle>Звонки в КТИТС</ApplicationTitle>
+	  <ApplicationTitle>DevCalls</ApplicationTitle>
 	  <ApplicationId>com.MiMM.ktitstimetableapp</ApplicationId>
-	  <ApplicationDisplayVersion>2.0</ApplicationDisplayVersion>
-	  <ApplicationVersion>6</ApplicationVersion>
+	  <ApplicationDisplayVersion>2.0.1</ApplicationDisplayVersion>
+	  <ApplicationVersion>7</ApplicationVersion>
+	  <ApplicationIdGuid>2e60024c-798b-4a98-ae19-69a39d78ca1a</ApplicationIdGuid>
 	</PropertyGroup>
 </Project>
