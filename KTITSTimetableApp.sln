@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KTITSTimetableApp", "KTITSTimetableApp\KTITSTimetableApp.csproj", "{C37582AD-2941-4159-9EFA-878B8B751706}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KTITSLive", "KTITSLive\KTITSLive.csproj", "{78AC614A-CA80-4EC7-9276-6D10B7623924}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTITSLive", "KTITSLive\KTITSLive.csproj", "{78AC614A-CA80-4EC7-9276-6D10B7623924}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTTMobile", "KTTMobile\KTTMobile.csproj", "{2C37EB88-DBCE-4624-932E-AE16FEAA0296}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,16 +13,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C37582AD-2941-4159-9EFA-878B8B751706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C37582AD-2941-4159-9EFA-878B8B751706}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C37582AD-2941-4159-9EFA-878B8B751706}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{C37582AD-2941-4159-9EFA-878B8B751706}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C37582AD-2941-4159-9EFA-878B8B751706}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C37582AD-2941-4159-9EFA-878B8B751706}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{78AC614A-CA80-4EC7-9276-6D10B7623924}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{78AC614A-CA80-4EC7-9276-6D10B7623924}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78AC614A-CA80-4EC7-9276-6D10B7623924}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78AC614A-CA80-4EC7-9276-6D10B7623924}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C37EB88-DBCE-4624-932E-AE16FEAA0296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C37EB88-DBCE-4624-932E-AE16FEAA0296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C37EB88-DBCE-4624-932E-AE16FEAA0296}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2C37EB88-DBCE-4624-932E-AE16FEAA0296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C37EB88-DBCE-4624-932E-AE16FEAA0296}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C37EB88-DBCE-4624-932E-AE16FEAA0296}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
