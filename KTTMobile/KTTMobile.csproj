@@ -1,10 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net6.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net7.0-android;net7.0-maccatalyst</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
-		<!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
 		<RootNamespace>KTTMobile</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -22,12 +21,40 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-android|AnyCPU'">
+	  <ApplicationTitle>Звонки dev</ApplicationTitle>
+	  <ApplicationId>com.Mimm.kttmobile</ApplicationId>
+	  <ApplicationDisplayVersion>2.1.0</ApplicationDisplayVersion>
+	  <ApplicationVersion>8</ApplicationVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android|AnyCPU'">
+	  <ApplicationTitle>Звонки dev</ApplicationTitle>
+	  <ApplicationId>com.Mimm.kttmobile</ApplicationId>
+	  <ApplicationDisplayVersion>2.1.0</ApplicationDisplayVersion>
+	  <ApplicationVersion>8</ApplicationVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-maccatalyst|AnyCPU'">
+	  <ApplicationTitle>Звонки dev</ApplicationTitle>
+	  <ApplicationId>com.Mimm.kttmobile</ApplicationId>
+	  <ApplicationDisplayVersion>2.1.0</ApplicationDisplayVersion>
+	  <ApplicationVersion>8</ApplicationVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-maccatalyst|AnyCPU'">
+	  <ApplicationTitle>Звонки dev</ApplicationTitle>
+	  <ApplicationId>com.Mimm.kttmobile</ApplicationId>
+	  <ApplicationDisplayVersion>2.1.0</ApplicationDisplayVersion>
+	  <ApplicationVersion>8</ApplicationVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -49,83 +76,32 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Raw\122.json" />
-	  <None Remove="Resources\Raw\AboutAssets.txt" />
-	  <None Remove="Resources\Raw\lessonCallMain.json" />
-	  <None Remove="Resources\Raw\lessonCallSat.json" />
+	  <None Remove="Resources\Images\когдановоеобновление.mp4" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="MainPage.xaml.cs">
-	    <SubType>Code</SubType>
-	    <DependentUpon>%(Filename)</DependentUpon>
-	  </Compile>
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiXaml Update="MainPage.xaml">
-	    <SubType>Designer</SubType>
-	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiAsset Update="Resources\Raw\122.json">
-	    <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
-	  </MauiAsset>
-	  <MauiAsset Update="Resources\Raw\AboutAssets.txt">
-	    <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
-	  </MauiAsset>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiAsset Update="Resources\Raw\lessonCallMain.json">
-	    <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
-	  </MauiAsset>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiAsset Update="Resources\Raw\lessonCallSat.json">
-	    <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
-	  </MauiAsset>
-	</ItemGroup>
-	<PropertyGroup Condition="$(TargetFramework.Contains('-android')) and '$(Configuration)' == 'Release'">
-		<AndroidKeyStore>True</AndroidKeyStore>
-		<AndroidSigningKeyStore>..\myapp.keystore</AndroidSigningKeyStore>
-		<AndroidSigningKeyAlias>key</AndroidSigningKeyAlias>
-		<AndroidSigningKeyPass>ktitsbest</AndroidSigningKeyPass>
-		<AndroidSigningStorePass>ktitsbest</AndroidSigningStorePass>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-android|AnyCPU'">
-	  <AndroidPackageFormat>apk</AndroidPackageFormat>
-	  <ApplicationDisplayVersion>2.1.0</ApplicationDisplayVersion>
-	  <ApplicationVersion>8</ApplicationVersion>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-android|AnyCPU'">
+		<ApplicationTitle>DevCalls</ApplicationTitle>
+		<ApplicationId>com.MiMM.ktitstimetableapp</ApplicationId>
+		<ApplicationDisplayVersion>2.0.1</ApplicationDisplayVersion>
+		<ApplicationVersion>7</ApplicationVersion>
+		<ApplicationIdGuid>2e60024c-798b-4a98-ae19-69a39d78ca1a</ApplicationIdGuid>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-android|AnyCPU'">
-	  <ApplicationDisplayVersion>2.1.0</ApplicationDisplayVersion>
-	  <ApplicationVersion>8</ApplicationVersion>
+		<ApplicationTitle>DevCalls</ApplicationTitle>
+		<ApplicationId>com.MiMM.ktitstimetableapp</ApplicationId>
+		<ApplicationDisplayVersion>2.0.1</ApplicationDisplayVersion>
+		<ApplicationVersion>7</ApplicationVersion>
+		<ApplicationIdGuid>2e60024c-798b-4a98-ae19-69a39d78ca1a</ApplicationIdGuid>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-ios|AnyCPU'">
-	  <ApplicationDisplayVersion>2.1.0</ApplicationDisplayVersion>
-	  <ApplicationVersion>8</ApplicationVersion>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-ios|AnyCPU'">
-	  <ApplicationDisplayVersion>2.1.0</ApplicationDisplayVersion>
-	  <ApplicationVersion>8</ApplicationVersion>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-maccatalyst|AnyCPU'">
-	  <ApplicationDisplayVersion>2.1.0</ApplicationDisplayVersion>
-	  <ApplicationVersion>8</ApplicationVersion>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-maccatalyst|AnyCPU'">
-	  <ApplicationDisplayVersion>2.1.0</ApplicationDisplayVersion>
-	  <ApplicationVersion>8</ApplicationVersion>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows10.0.19041.0|AnyCPU'">
-	  <ApplicationDisplayVersion>2.1.0</ApplicationDisplayVersion>
-	  <ApplicationVersion>8</ApplicationVersion>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-windows10.0.19041.0|AnyCPU'">
-	  <ApplicationDisplayVersion>2.1.0</ApplicationDisplayVersion>
-	  <ApplicationVersion>8</ApplicationVersion>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-android|AnyCPU'">
+		<ApplicationTitle>DevCalls</ApplicationTitle>
+		<ApplicationId>com.MiMM.ktitstimetableapp</ApplicationId>
+		<ApplicationDisplayVersion>2.0.1</ApplicationDisplayVersion>
+		<ApplicationVersion>7</ApplicationVersion>
+		<AndroidPackageFormat>apk</AndroidPackageFormat>
+		<ApplicationIdGuid>2e60024c-798b-4a98-ae19-69a39d78ca1a</ApplicationIdGuid>
 	</PropertyGroup>
 </Project>

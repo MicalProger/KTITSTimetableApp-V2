@@ -189,7 +189,7 @@ public partial class MainPage : ContentPage
         Grid grid = new Grid() { BindingContext = new List<TimeSpan>() { start, end } };
         BoxView bv = new BoxView()
         {
-            //Color = Brush.Blue.Color,
+            Color = Brush.Blue.Color,
             CornerRadius = new CornerRadius(10)
         };
         Grid.SetRowSpan(bv, 2);
@@ -219,7 +219,7 @@ public partial class MainPage : ContentPage
         {
             ScaleY = 3,
             Margin = new Thickness(10, 0),
-            //ProgressColor = Brush.Orange.Color,
+            ProgressColor = Brush.Orange.Color,
             IsVisible = false,
         };
         localProgressGrid.Add(pbTotal);
