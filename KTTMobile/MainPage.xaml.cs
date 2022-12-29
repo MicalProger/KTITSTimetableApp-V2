@@ -1,4 +1,6 @@
-﻿using System.Text.Json;
+﻿using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Text.Json;
 
 namespace KTITSTimetableApp;
 
@@ -10,6 +12,16 @@ public partial class MainPage : ContentPage
         using StreamReader reader = new StreamReader(fileStream);
 
         return reader.ReadToEndAsync().Result;
+    }
+    public async void TryUpdateAsync()
+    {
+        Version last = new Version(Utils.LoadFile($"https://disk.yandex.ee/i/KigagsILEg6clA"));
+        if(last > Assembly.GetExecutingAssembly().GetName().Version)
+        {
+            //var update = await DisplayAlert("Обнаружена новая версия", $"Доступна новая версия - {last.ToString()}", "Установить", "Потом");
+            var update = await DisplayAlert("A", $"B - {last.ToString()}", "C", "D");
+
+        }
     }
     public MainPage()
     {
@@ -27,6 +39,7 @@ public partial class MainPage : ContentPage
             return;
         Utils.UpdateTT();
         LoadTT();
+        TryUpdateAsync();
     }
 
     private void LoadTT()

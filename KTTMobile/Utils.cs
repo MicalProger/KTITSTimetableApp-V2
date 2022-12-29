@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace KTITSTimetableApp
@@ -46,6 +48,15 @@ namespace KTITSTimetableApp
                 return t1.Subtract(t2);
             else return TimeSpan.FromDays(1).Subtract(t2) + t1;
         }
-
+        public static string LoadFile(string fileLink)
+        {
+            using (HttpClient cl = new HttpClient())
+            {
+                var loadLink = cl.GetAsync($"https://cloud-api.yandex.net/v1/disk/public/resources/download?public_key=" + fileLink).Result.Content.ReadAsStringAsync().Result;
+                var finalLink = JsonDocument.Parse(loadLink).RootElement.GetProperty("href").GetString();
+                var fileContent = cl.GetAsync(finalLink).Result.Content.ReadAsStringAsync().Result;
+                return fileContent;
+            }
+        }
     }
 }

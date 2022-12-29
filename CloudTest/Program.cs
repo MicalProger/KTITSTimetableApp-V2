@@ -27,7 +27,7 @@ namespace CloudTest
 
             //var text = new StreamReader(resp.GetResponseStream()).ReadToEnd();
             HttpClient client = new HttpClient();
-            var x = client.GetAsync("https://cloud-api.yandex.net/v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ee%2Fd%2Frn4Zyytc-qr5gw")..Result.Content.ReadAsStringAsync().Result;
+            //var x = client.GetAsync("https://cloud-api.yandex.net/v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ee%2Fd%2Frn4Zyytc-qr5gw")..Result.Content.ReadAsStringAsync().Result;
             Asnwer a = JsonSerializer.Deserialize<Asnwer>(x);
             return client.GetAsync(a.href).Result.Content.ReadAsStringAsync().Result;
         }
