@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KTTMobile.Pages.UpdatePage"
+             Title="Обнаружено обновление">
+    <VerticalStackLayout Spacing="5" Margin="5">
+        <Label Text="Доступна новая версия!" FontSize="30"/>
+        <Label Text="{Binding}" FontSize="30"/>
+        <Button Text="Скачать" Clicked="OnLoad" Background="yellow"/>
+        <WebView x:Name="Test" HeightRequest="300"/>
+    </VerticalStackLayout>
+</ContentPage>

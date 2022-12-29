@@ -80,9 +80,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Pages\TodayView.xaml">
+	  <MauiXaml Update="Pages\UpdatePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Using Include="KTTMobile.Pages;" />
 	</ItemGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-android|AnyCPU'">
 		<ApplicationTitle>DevCalls</ApplicationTitle>
