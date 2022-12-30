@@ -86,6 +86,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Using Include="KTITSTimetableApp" />
 	  <Using Include="KTTMobile.Pages;" />
 	</ItemGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-android|AnyCPU'">

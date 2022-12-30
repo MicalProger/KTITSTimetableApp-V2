@@ -3,10 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KTTMobile.Pages.UpdatePage"
              Title="Обнаружено обновление">
-    <VerticalStackLayout Spacing="5" Margin="5">
+    <VerticalStackLayout Spacing="10" Margin="10">
         <Label Text="Доступна новая версия!" FontSize="30"/>
         <Label Text="{Binding}" FontSize="30"/>
         <Button Text="Скачать" Clicked="OnLoad" Background="yellow"/>
-        <WebView x:Name="Test" HeightRequest="300"/>
+        <Grid x:Name="LoadGrid" IsVisible="false">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <WebView x:Name="Test" HeightRequest="300" Margin="5, 100, 5, 5"/>
+            <VerticalStackLayout Grid.Row="1" Margin="5, 80, 5, 5">
+                <Label Text="Скачано уже на 59%" x:Name="LoadLb"/>
+                <ProgressBar x:Name="LoadPb"/>
+            </VerticalStackLayout>
+            
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>

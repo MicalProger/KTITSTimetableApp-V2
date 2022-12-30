@@ -15,10 +15,10 @@ public partial class MainPage : ContentPage
     }
     public async void TryUpdateAsync()
     {
-        Version last = new Version(Utils.LoadFile($"https://disk.yandex.ee/i/KigagsILEg6clA"));
+        Version last = new Version(Utils.LoadSmallFile($"https://disk.yandex.ee/i/KigagsILEg6clA"));
         if (last > Assembly.GetExecutingAssembly().GetName().Version)
         {
-            await Navigation.PushModalAsync(new UpdatePage(last));
+            await Navigation.PushAsync(new UpdatePage(last));
         }
     }
     public MainPage()

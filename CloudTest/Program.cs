@@ -16,26 +16,28 @@ namespace CloudTest
             return Regex.Match(resultString, pattern).Value.TrimEnd('"');
         }
 
-        public static string DownloadUrl(string fileName = "/", string localFileName = "")
+        public static void DownloadUrl(string fileName = "/", string localFileName = "")
         {
-            //var req = WebRequest.Create(new Uri("https://cloud-api.yandex.net/v1/disk/resources/download?path=disk:/" + Uri.EscapeUriString(fileName)));
-            ////((HttpWebRequest)req).Accept = "*/*";
-            ////req.Headers["Depth"] = "1";
-            //req.Headers["Authorization"] = "OAuth 0aab0aa10dd44578bcfe23f65d51f410";
-            //((HttpWebRequest)req).Proxy = null;
-            //var resp = req.GetResponse();
+            WebClient web = new WebClient();
+            web.DownloadProgressChanged += Web_DownloadProgressChanged;
+            using (HttpClient cl = new HttpClient())
+            {
+                var loadLink = cl.GetAsync($"https://cloud-api.yandex.net/v1/disk/public/resources/download?public_key=" + fileName).Result.Content.ReadAsStringAsync().Result;
+                var finalLink = JsonDocument.Parse(loadLink).RootElement.GetProperty("href").GetString();
+                web.DownloadFileAsync(new Uri(finalLink), localFileName);
+            }
+        }
 
-            //var text = new StreamReader(resp.GetResponseStream()).ReadToEnd();
-            HttpClient client = new HttpClient();
-            //var x = client.GetAsync("https://cloud-api.yandex.net/v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ee%2Fd%2Frn4Zyytc-qr5gw")..Result.Content.ReadAsStringAsync().Result;
-            Asnwer a = JsonSerializer.Deserialize<Asnwer>(x);
-            return client.GetAsync(a.href).Result.Content.ReadAsStringAsync().Result;
+        private static void Web_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            Console.WriteLine((double)e.BytesReceived  / (double)e.TotalBytesToReceive * 100);
         }
 
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            Console.WriteLine(DownloadUrl("https://disk.yandex.ee/d/rn4Zyytc-qr5gw"));
+            DownloadUrl("https://disk.yandex.ee/i/cvkguOXkF-U68g", "load.mp4");
+            while(true);
         }
     }
 }

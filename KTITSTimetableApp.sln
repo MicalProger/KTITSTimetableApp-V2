@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KTITSLive", "KTITSLive\KTIT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KTTMobile", "KTTMobile\KTTMobile.csproj", "{7F0ACAF2-3799-4FDF-B2F9-E17056525322}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudTest", "CloudTest\CloudTest.csproj", "{0497F8E1-9255-4D0E-9DA4-4F4C24CF0D9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{7F0ACAF2-3799-4FDF-B2F9-E17056525322}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F0ACAF2-3799-4FDF-B2F9-E17056525322}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7F0ACAF2-3799-4FDF-B2F9-E17056525322}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0497F8E1-9255-4D0E-9DA4-4F4C24CF0D9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0497F8E1-9255-4D0E-9DA4-4F4C24CF0D9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0497F8E1-9255-4D0E-9DA4-4F4C24CF0D9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0497F8E1-9255-4D0E-9DA4-4F4C24CF0D9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
